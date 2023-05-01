@@ -71,7 +71,8 @@ if ypu use an USB adapter change the device to
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is sufficente for on stree use, but of course it is in progress.
+Any suggestion, bugs signaltion or request of improvement aer wellcome.
 
 
 ## Room for Improvement
@@ -84,17 +85,15 @@ Room for improvement:
 
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+Thanks for the support, the explanation and the patience to:
+- ing. Giorgio Luppi of Kernel Sistemi srl
+- Luca Morisi of Kernel Sistem srl
 
 
 ## Contact
-Created by [@flynerdpl](http://www.elebor.it/) - feel free to contact me
+Created by [elebor GB srl](http://www.elebor.it/) - feel free to contact for bugs submission, improvement suggstions  
 
 ## License
 This project is open source and available under the [Mozzilla License](https://mozilla.org/MPL/2.0/)
-
 
 
