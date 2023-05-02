@@ -1,10 +1,8 @@
 /** ********************************************
- * nome file: IOManager.js
- * contenuto: 
- *    modulo di gestione della comunicazione con i muduli 
- *    di espansione IO 
- * autore: Glauco Bordoni
- * data: 2023-03-09
+ * file name: IOManager.js
+ * content  : manage the comunication with the daemon kernelProto using sockets
+ * author   : Glauco Bordoni
+ * date     : 2023-03-09
  * ********************************************** */
 /*
  * This Source Code Form is subject to the terms of the Mozilla Public
