@@ -52,8 +52,6 @@ number_of_data: the number of data to read
 val1..valn    : the values to be written
 
 
-
-
 ## Setup
 Compile in Linux
 
@@ -61,13 +59,14 @@ gcc kernelProto.c -o kerneProto
 
 ## Usage
 
+Open a shell
 To run the KernelProto on serial port COM1  
 
-`KernelProto /dev/tty0 19200`
+`>KernelProto /dev/tty0 19200 &`
 
 if ypu use an USB adapter change the device to
 
-`KernelProto /dev/ttyUSB0 19200`
+`> KernelProto /dev/ttyUSB0 19200 &`
 
 
 ## Project Status
