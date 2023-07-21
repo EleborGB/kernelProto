@@ -21,7 +21,7 @@ KernelProto is a Linux program that export API to communicate with *Kernel Siste
 ## General Information
 KernelProto is a program, to be run as daemon, written in C language that export API via named socket to communicate withe *Kernel Sistemi* PLC and expansion cards.
 KernelProto permits to read and write data into PLC and/or an expansion card using *Kernel Sistemi* protocol.
-KernwlProto is written to run in Linx environment in pure C. 
+KernelProto is written to run in Linx environment in pure C. 
 KernelProto was developed in the aim to give fast serial port access to high level languages. ex. Javascript & Nodejs, Python , Java. 
 
 
@@ -39,7 +39,7 @@ KernelProto uses the named socket technology to implement the "inter process com
 The name of the opened socket is
 /tmp/icp-kernel
 
-The fromat of the message processed is:
+The format of the message processed is:
 
 device_address, command, data_address, number_of_data, val1 ,val2....
 
@@ -64,14 +64,14 @@ To run the KernelProto on serial port COM1
 
 `>KernelProto /dev/tty0 19200 &`
 
-if ypu use an USB adapter change the device to
+if you use an USB adapter change the device to
 
 `> KernelProto /dev/ttyUSB0 19200 &`
 
 
 ## Project Status
-Project is sufficente for on stree use, but of course it is in progress.
-Any suggestion, bugs signaltion or request of improvement aer wellcome.
+Project is sufficent for on street use, but of course it is in progress.
+Any suggestion, bugs signalation or request of improvement are welcome.
 
 
 ## Room for Improvement
