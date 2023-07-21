@@ -54,13 +54,17 @@ int main (int argc, char *argv[]) {
 	
 	char read_input_ans [256];
 	
+	printf("\n --== kernelProto started ==--\n");
+
     if (argc < 3) {
-		error( serial_port_handler,-4,"Usage: kernelProto <CAN-Channel> <CAN-Bitrate> -v\nExample:\n\tkernelProto ttyS3 9600\n\tkernelProto ttyS3 19200\n");
+		error( serial_port_handler,-4,"Usage: kernelProto <Serial Port> <Bit rate> -v\nExample:\n\tkernelProto /dev/ttyUSB1 19200\n\tkernelProto ttyS3 9600\n");
 	}
 
-	if (argc==4){
-		if (strcmp(argv[3],"-v")==0)
+	if (argc == 4) {
+		if (strcmp(argv[3],"-v")==0){
 			verbose=true;
+			printf("Verbose mode enabled.\n",argv[3]);
+		}
 	}
 	
 	//set serial the device 
@@ -221,12 +225,16 @@ int main (int argc, char *argv[]) {
 			sprintf(msg,"read %u bytes: %.*s\n", rc, rc, buf); //stampa la stringa della dimensione giusta
 			echo(msg);
 
-			/*
-			command format:
-			slave_address, command, data_address, number_of_data, val1 ,val2....
-			command: 
-				string: READ / WRITE
-				addr
+			/**
+			message format:
+			device_address, command, data_address, number_of_data, val1 ,val2....
+
+			device_address: the address of the device on the serial bus
+			command       : string "READ", "WRITE"
+			data_address  : the address of the first data to read/write
+			number_of_data: the number of data to read
+			val1..valn    : the values to be written
+				
 			*/
 			
 			memset(cmd, 0, sizeof(cmd)); //clean up the command string
@@ -328,8 +336,10 @@ int main (int argc, char *argv[]) {
 			if (writeCommand==true)	{ 		//if  WRITE command 
 				if (str[1]==ACK)			//check the ACK/NACK char	
 					strcat (str,"\"OK\"");	//good
-				else
+				else if (str[1]==NAK)		//check the ACK/NACK char	
 					strcat (str,"\"KO\"");	//bad
+				else
+					strcat (str,"\"??\"");	//bad
 			} else {
 				for (int iter=0; iter< numeroData; iter++){
 					if (iter)
